@@ -4,7 +4,9 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 import com.constants.Browser;
+import com.constants.Env;
 import com.utility.BrowserUtility;
+import com.utility.PropertiesUtil;
 
 public final class HomePage extends BrowserUtility {
 
@@ -12,7 +14,7 @@ public final class HomePage extends BrowserUtility {
 	
 	public HomePage(Browser browserName) {
 		super(browserName);
-		goToWebsite("http://www.automationpractice.pl/");
+		goToWebsite(PropertiesUtil.readProperty(Env.QA, "URL"));
 		maximizeBrowserWindow();
 		
 	}

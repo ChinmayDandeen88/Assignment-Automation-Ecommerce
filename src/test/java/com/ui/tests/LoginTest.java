@@ -1,33 +1,36 @@
 package com.ui.tests;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
 
-import com.utility.BrowserUtility;
+import com.constants.Browser;
+import com.ui.pages.HomePage;
 
 public class LoginTest {
-
-	public static void main(String[] args) {
-		WebDriver wd = new ChromeDriver(); // launches the browser session
+	HomePage homePage;
+	
+	@BeforeMethod(description = "Load the Homepage of the website")
+	public void setup() {
+		homePage = new HomePage(Browser.CHROME);
+	}
+	
+	
+	
+	@Test(description = "verifies with valid login user is able to login into application", groups = {"e2e","sanity"})
+	public void loginTest() {
 		
-		BrowserUtility browserUtility = new BrowserUtility(wd);
+		/* 
+		 * Test scripts should be small
+		 * no conditional statements,loops,exceptions, try catch block should not be there
+		 * no local variables or reduce local variables 
+		 * At-least one assertions
+		 * 
+		 * 
+		 */
 		
-		browserUtility.goToWebsite("http://www.automationpractice.pl");
-		browserUtility.maximizeBrowserWindow();
-		
-		By signLinkLocator = By.xpath("//a[contains(text(),\"Sign in\")]");
-		browserUtility.clickOn(signLinkLocator);
-		
-		By emailTextBoxLocator = By.id("email");
-		browserUtility.enterText(emailTextBoxLocator, "vanobey727@roratu.com");
-		
-		By passwordTextBoxLocator = By.id("passwd");
-		browserUtility.enterText(passwordTextBoxLocator,"Password" );
-		
-		By submitLoginButtonLocator =By.id("SubmitLogin");
-		browserUtility.clickOn(submitLoginButtonLocator);
+		String userName = homePage.goToLoginPage().doLoginWith("vanobey727@roratu.com", "Password").getUserName();
+		Assert.assertEquals(userName, "Chinmay Dandeen");
 		
 		//wd.quit();
 		//vanobey727@roratu.com
