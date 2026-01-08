@@ -1,26 +1,173 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="3" passed="1" failed="2" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-01-01T19:39:10 IST" name="Default suite" finished-at="2026-01-01T19:39:27 IST" duration-ms="17182">
+  <suite started-at="2026-01-08T19:03:03 IST" name="Default suite" finished-at="2026-01-08T19:03:57 IST" duration-ms="53695">
     <groups>
       <group name="sanity">
-        <method signature="LoginTest.loginTest()[pri:0, instance:com.ui.tests.LoginTest@cd3fee8]" name="loginTest" class="com.ui.tests.LoginTest"/>
+        <method signature="LoginTest.loginCSVTest(com.ui.pojo.User)[pri:0, instance:com.ui.tests.LoginTest@13e39c73]" name="loginCSVTest" class="com.ui.tests.LoginTest"/>
       </group> <!-- sanity -->
       <group name="e2e">
-        <method signature="LoginTest.loginTest()[pri:0, instance:com.ui.tests.LoginTest@cd3fee8]" name="loginTest" class="com.ui.tests.LoginTest"/>
+        <method signature="LoginTest.loginCSVTest(com.ui.pojo.User)[pri:0, instance:com.ui.tests.LoginTest@13e39c73]" name="loginCSVTest" class="com.ui.tests.LoginTest"/>
       </group> <!-- e2e -->
     </groups>
-    <test started-at="2026-01-01T19:39:10 IST" name="Default test" finished-at="2026-01-01T19:39:27 IST" duration-ms="17182">
+    <test started-at="2026-01-08T19:03:03 IST" name="Default test" finished-at="2026-01-08T19:03:57 IST" duration-ms="53695">
       <class name="com.ui.tests.LoginTest">
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.ui.tests.LoginTest@cd3fee8]" started-at="2026-01-01T19:39:10 IST" name="setup" description="Load the Homepage of the website" finished-at="2026-01-01T19:39:23 IST" duration-ms="12584" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.ui.tests.LoginTest@13e39c73]" started-at="2026-01-08T19:03:03 IST" name="setup" description="Load the Homepage of the website" finished-at="2026-01-08T19:03:19 IST" duration-ms="16100" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="loginTest()[pri:0, instance:com.ui.tests.LoginTest@cd3fee8]" started-at="2026-01-01T19:39:23 IST" name="loginTest" description="verifies with valid login user is able to login into application" finished-at="2026-01-01T19:39:27 IST" duration-ms="4582" status="PASS">
+        <test-method signature="loginCSVTest(com.ui.pojo.User)[pri:0, instance:com.ui.tests.LoginTest@13e39c73]" started-at="2026-01-08T19:03:19 IST" name="loginCSVTest" description="verifies with valid login user is able to login into application" data-provider="LoginTestCSVDataProvider" finished-at="2026-01-08T19:03:24 IST" duration-ms="4872" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[User [emailAddress=jatinvsharma@gmail.com, password=pass1234]]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[expected [Chinmay Dandeen] but found [Rahul kumar]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: expected [Chinmay Dandeen] but found [Rahul kumar]
+at org.testng.Assert.fail(Assert.java:111)
+at org.testng.Assert.failNotEquals(Assert.java:1578)
+at org.testng.Assert.assertEqualsImpl(Assert.java:150)
+at org.testng.Assert.assertEquals(Assert.java:132)
+at org.testng.Assert.assertEquals(Assert.java:656)
+at org.testng.Assert.assertEquals(Assert.java:666)
+at com.ui.tests.LoginTest.loginCSVTest(LoginTest.java:36)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+at org.testng.TestRunner.privateRun(TestRunner.java:739)
+at org.testng.TestRunner.run(TestRunner.java:614)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- loginTest -->
+        </test-method> <!-- loginCSVTest -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.ui.tests.LoginTest@13e39c73]" started-at="2026-01-08T19:03:24 IST" name="setup" description="Load the Homepage of the website" finished-at="2026-01-08T19:03:36 IST" duration-ms="11803" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="loginCSVTest(com.ui.pojo.User)[pri:0, instance:com.ui.tests.LoginTest@13e39c73]" started-at="2026-01-08T19:03:36 IST" name="loginCSVTest" description="verifies with valid login user is able to login into application" data-provider="LoginTestCSVDataProvider" finished-at="2026-01-08T19:03:41 IST" duration-ms="4575" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[User [emailAddress=vanobey727@roratu.com, password=Password]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginCSVTest -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.ui.tests.LoginTest@13e39c73]" started-at="2026-01-08T19:03:41 IST" name="setup" description="Load the Homepage of the website" finished-at="2026-01-08T19:03:53 IST" duration-ms="11941" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="loginCSVTest(com.ui.pojo.User)[pri:0, instance:com.ui.tests.LoginTest@13e39c73]" started-at="2026-01-08T19:03:53 IST" name="loginCSVTest" description="verifies with valid login user is able to login into application" data-provider="LoginTestCSVDataProvider" finished-at="2026-01-08T19:03:57 IST" duration-ms="4374" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[User [emailAddress=udya@gmail.com, password=Pass12345]]]>
+              </value>
+            </param>
+          </params>
+          <exception class="org.openqa.selenium.NoSuchElementException">
+            <message>
+              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//a[@title='View my customer account']/span"}
+  (Session info: chrome=143.0.7499.170)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
+Build info: version: '4.39.0', revision: '126f156aee'
+System info: os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '13.7.5', java.version: '21.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [71133a8fa1088884e6400d7afb46a2b3, findElement {using=xpath, value=//a[@title='View my customer account']/span}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.170, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: /var/folders/03/2b9_g1kj2w9...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:49308}, goog:processID: 60908, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:49308/devtoo..., se:cdpVersion: 143.0.7499.170, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 71133a8fa1088884e6400d7afb46a2b3]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//a[@title='View my customer account']/span"}
+  (Session info: chrome=143.0.7499.170)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
+Build info: version: '4.39.0', revision: '126f156aee'
+System info: os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '13.7.5', java.version: '21.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [71133a8fa1088884e6400d7afb46a2b3, findElement {using=xpath, value=//a[@title='View my customer account']/span}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.170, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: /var/folders/03/2b9_g1kj2w9...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:49308}, goog:processID: 60908, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:49308/devtoo..., se:cdpVersion: 143.0.7499.170, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 71133a8fa1088884e6400d7afb46a2b3
+at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:142)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:561)
+at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:166)
+at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:384)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:378)
+at com.utility.BrowserUtility.getVisibleText(BrowserUtility.java:64)
+at com.ui.pages.MyAccountPage.getUserName(MyAccountPage.java:19)
+at com.ui.tests.LoginTest.loginCSVTest(LoginTest.java:36)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+at org.testng.TestRunner.privateRun(TestRunner.java:739)
+at org.testng.TestRunner.run(TestRunner.java:614)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginCSVTest -->
       </class> <!-- com.ui.tests.LoginTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
