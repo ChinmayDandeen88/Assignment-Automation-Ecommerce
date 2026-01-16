@@ -5,7 +5,8 @@
 		<Console name="Console" target="SYSTEM_OUT">
 
 			<PatternLayout
-				pattern="%d{YYYY-MM-dd HH:mm:ss} [%t] %level %logger %msg %n"></PatternLayout>
+				pattern="%d{YYYY-MM-dd HH:mm:ss} [%t] %level %logger::%M::%L %msg %n"></PatternLayout> // %M represents Method Nam
+				// %L represents Line Number 
 	</Console>
 		<File name="FileLogger" fileName="logs/automation.log" append="false">	
 		<PatternLayout

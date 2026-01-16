@@ -2,6 +2,7 @@ package com.ui.tests;
 
 import static org.testng.Assert.assertEquals;
 
+import org.apache.logging.log4j.Logger;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -9,6 +10,7 @@ import org.testng.annotations.Test;
 import com.constants.Browser;
 import com.ui.pages.HomePage;
 import com.ui.pojo.User;
+import com.utility.LoggerUtility;
 
 public class LoginTest {
 	HomePage homePage;
@@ -33,9 +35,11 @@ public class LoginTest {
 			dataProviderClass = com.ui.dataproviders.LoginDataProvider.class,dataProvider = "LoginTestCSVDataProvider",
 			retryAnalyzer = com.ui.listeners.MyRetryAnalyzer.class)
 	public void loginCSVTest(User user) {
-
+		Logger logger = LoggerUtility.getLogger(this.getClass());
+		logger.info("Started My login Csv Test");
 		assertEquals(homePage.goToLoginPage().doLoginWith(user.getEmailAddress(), user.getPassword()).getUserName(),
 				"Chinmay Dandeen");
+		logger.info("My login Csv Test Completed");
 	}
 
 
