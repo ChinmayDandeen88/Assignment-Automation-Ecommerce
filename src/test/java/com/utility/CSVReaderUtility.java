@@ -42,9 +42,9 @@ public class CSVReaderUtility {
 			 }
 			 
 			 //System.out.println(Arrays.toString(data));
-			/* for(User userData : userList) {
-				 System.out.println(userData);
-			 } */
+			for(User user : userList) {
+				 System.out.println(user);
+			 } 
 			 
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();

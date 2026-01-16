@@ -30,7 +30,8 @@ public class LoginTest {
 
 
 	@Test(description = "verifies with valid login user is able to login into application", groups = {"e2e","sanity"},
-			dataProviderClass = com.ui.dataproviders.LoginDataProvider.class,dataProvider = "LoginTestCSVDataProvider")
+			dataProviderClass = com.ui.dataproviders.LoginDataProvider.class,dataProvider = "LoginTestCSVDataProvider",
+			retryAnalyzer = com.ui.listeners.MyRetryAnalyzer.class)
 	public void loginCSVTest(User user) {
 
 		assertEquals(homePage.goToLoginPage().doLoginWith(user.getEmailAddress(), user.getPassword()).getUserName(),
